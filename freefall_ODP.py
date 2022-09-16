@@ -15,8 +15,16 @@ class free_fall:
     
     def kecepatan(self):
         v = self.percepatan_gravitasi*self.waktu
-        return v
+       return  print(f"kecepatan benda jatuh bebas pada saat detik ke-{self.waktu} adalah {v} m/s.")
     
+    def tinggi(self,tinggi_awal):
+        h = tinggi_awal - 0.5*self.percepatan_gravitasi*self.waktu**2
+        if h<0:
+            t = np.sqrt(2*tinggi_awal/self.percepatan_gravitasi)
+            print(f'benda sampai ke tanah sebelum {self.waktu} detik, yaitu pada t={t}s')
+        else:
+            print(f"ketinggian benda jatuh bebas pada saat detik ke-{self.waktu} adalah {h} m.")
+        return
 
 
 tes1 = free_fall(1,9.8,0,4)
